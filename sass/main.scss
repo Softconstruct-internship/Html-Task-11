@@ -2,11 +2,12 @@
 @import "header";
 @import "background";
 @import "movies";
+@import "latest-movies";
 *{
     padding: 0;
     margin: 0;
     font-family: "Cairo", sans-serif;
-    
+    color: $font_color;
 }
 html{
     font-size: 16px;

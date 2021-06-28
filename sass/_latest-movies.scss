@@ -1,6 +1,9 @@
-.movies_main_section {
+.latest_movies_main_section {
     background-color: $body-background-color;
-    .movies_container {
+    main_container{
+        padding: 40px 40px 40px 40px;
+    }
+    .latest_movies_container {
         .movie_card {
             position: relative;
             overflow: hidden;
@@ -18,7 +21,7 @@
                 left: 0;
                 width: 100%;
                 color: $font_color;
-                background-color: rgba(0, 0, 0, 0.8) !important;
+                background-color: rgba(0, 0, 0, 0.8);
                 i {
                     margin-right: 3px;
                     color: red;
@@ -37,15 +40,24 @@
             transform: scale(1.2);
         }
     }
+    h1{
+        padding: 20px 20px 20px 20px;
+        margin-left: 40px;
+        border-left: 4px solid $icon-color;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
 }
-.movies_container {
+.latest_movies_container {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
-    padding: 40px 0 40px 0;
+    grid-gap: 2vw;
+    padding: 40px 40px 40px 40px;
+    
 }
 @media only screen and (max-width: 1400px) {
-    .movies_container {
+    .latest_movies_container {
         grid-template-columns: repeat(2, 1fr);
         .img_card {
             width: 100%;
@@ -53,7 +65,7 @@
     }
 }
 @media only screen and (max-width: 1055px) {
-    .movies_container {
+    .latest_movies_container {
         grid-template-columns: repeat(1, 1fr);
       .movie_card{
         justify-content: center;

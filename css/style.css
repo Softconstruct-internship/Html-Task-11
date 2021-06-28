@@ -73,34 +73,35 @@
       text-transform: uppercase;
       padding: 10px; }
 
-.movies_main_section .movies_container .movie_card {
-  position: relative;
-  overflow: hidden; }
-  .movies_main_section .movies_container .movie_card .img_card {
-    background-image: url(../assets/moviesImg/supergirl.jpg);
-    height: 600px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    align-items: center; }
-  .movies_main_section .movies_container .movie_card .info_movie {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.8); }
-    .movies_main_section .movies_container .movie_card .info_movie i {
-      margin-right: 3px;
-      color: red; }
-    .movies_main_section .movies_container .movie_card .info_movie h2 {
-      padding-bottom: 20px; }
-    .movies_main_section .movies_container .movie_card .info_movie span {
-      align-items: center;
-      font-size: 0.8rem;
-      font-weight: 600; }
-
-.movies_main_section .movies_container .movie_card:hover {
-  transform: scale(1.2); }
+.movies_main_section {
+  background-color: #181616; }
+  .movies_main_section .movies_container .movie_card {
+    position: relative;
+    overflow: hidden; }
+    .movies_main_section .movies_container .movie_card .img_card {
+      background-image: url(../assets/moviesImg/supergirl.jpg);
+      height: 600px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: center; }
+    .movies_main_section .movies_container .movie_card .info_movie {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.8) !important; }
+      .movies_main_section .movies_container .movie_card .info_movie i {
+        margin-right: 3px;
+        color: red; }
+      .movies_main_section .movies_container .movie_card .info_movie h2 {
+        padding-bottom: 20px; }
+      .movies_main_section .movies_container .movie_card .info_movie span {
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 600; }
+  .movies_main_section .movies_container .movie_card:hover {
+    transform: scale(1.2); }
 
 .movies_container {
   display: grid;
@@ -124,10 +125,72 @@
     .movies_container .img_card {
       width: 50%; } }
 
+.latest_movies_main_section {
+  background-color: #181616; }
+  .latest_movies_main_section main_container {
+    padding: 40px 40px 40px 40px; }
+  .latest_movies_main_section .latest_movies_container .movie_card {
+    position: relative;
+    overflow: hidden; }
+    .latest_movies_main_section .latest_movies_container .movie_card .img_card {
+      background-image: url(../assets/moviesImg/supergirl.jpg);
+      height: 600px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: center; }
+    .latest_movies_main_section .latest_movies_container .movie_card .info_movie {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.8); }
+      .latest_movies_main_section .latest_movies_container .movie_card .info_movie i {
+        margin-right: 3px;
+        color: red; }
+      .latest_movies_main_section .latest_movies_container .movie_card .info_movie h2 {
+        padding-bottom: 20px; }
+      .latest_movies_main_section .latest_movies_container .movie_card .info_movie span {
+        align-items: center;
+        font-size: 0.8rem;
+        font-weight: 600; }
+  .latest_movies_main_section .latest_movies_container .movie_card:hover {
+    transform: scale(1.2); }
+  .latest_movies_main_section h1 {
+    padding: 20px 20px 20px 20px;
+    margin-left: 40px;
+    border-left: 4px solid #c0392b;
+    font-size: 1.5rem;
+    font-weight: 700; }
+
+.latest_movies_container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2vw;
+  padding: 40px 40px 40px 40px; }
+
+@media only screen and (max-width: 1400px) {
+  .latest_movies_container {
+    grid-template-columns: repeat(2, 1fr); }
+    .latest_movies_container .img_card {
+      width: 100%; } }
+
+@media only screen and (max-width: 1055px) {
+  .latest_movies_container {
+    grid-template-columns: repeat(1, 1fr); }
+    .latest_movies_container .movie_card {
+      justify-content: center;
+      display: flex;
+      text-align: center; }
+    .latest_movies_container .img_card {
+      width: 50%; } }
+
 * {
   padding: 0;
   margin: 0;
-  font-family: "Cairo", sans-serif; }
+  font-family: "Cairo", sans-serif;
+  color: #ffffff; }
 
 html {
   font-size: 16px; }
