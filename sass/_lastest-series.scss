@@ -1,0 +1,82 @@
+.latest_series_main_section {
+    background-color: $body-background-color;
+    main_container{
+        padding: 40px 40px 40px 40px;
+    }
+    .latest_series_container {
+        .movie_card {
+            position: relative;
+            overflow: hidden;
+            .img_card {
+                // position: absolute;
+                background-image: url(../assets/moviesImg/supergirl.jpg);
+                height: 600px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                align-items: center;
+            }
+            .info_movie {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                color: $font_color;
+                background-color: rgba(0, 0, 0, 0.8);
+                i {
+                    margin-right: 3px;
+                    color: red;
+                }
+                h2 {
+                    padding-bottom: 20px;
+                }
+                span {
+                    align-items: center;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                }
+            }
+        }
+        .movie_card:hover {
+            transform: scale(1.2);
+        }
+    }
+    h1{
+        padding: 20px 20px 20px 20px;
+        margin-left: 40px;
+        border-left: 4px solid $icon-color;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+}
+.latest_series_container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2vw;
+    padding: 40px 40px 40px 40px;
+    
+}
+@media only screen and (max-width: 1400px) {
+    .latest_series_container {
+        grid-template-columns: repeat(2, 1fr);
+        .img_card {
+            width: 100%;
+        }
+        
+    }
+}
+@media only screen and (max-width: 1055px) {
+    .latest_series_container {
+        grid-template-columns: repeat(1, 1fr);
+      .movie_card{
+        justify-content: center;
+        display: flex;
+        text-align: center;
+      }
+        .img_card {
+            width: 50%;
+
+
+        }
+    }
+}
