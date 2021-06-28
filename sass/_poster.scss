@@ -1,0 +1,53 @@
+.main_section_poster {
+    &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../assets/img/transformer-banner.jpg);
+        display: inline-block;
+        background-size: cover;
+        filter: grayscale(50%);
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        height: 600px;
+        filter: brightness(0.5);
+    }
+    .contsiner_div {
+        position: absolute;
+        transition: 0.5s ease-in-out;
+        color: $font_color;
+        width: 40%;
+        padding: 60px 40px 0px 40px;
+        h1 {
+            font-size: 4rem;
+            line-height: 5rem;
+            font-weight: 900;
+        }
+        .movie-descriptions {
+            font-size: 0.8rem;
+            align-items: center;
+            padding-top: 30px;
+            i {
+                margin-right: 3px;
+                color: red;
+            }
+            span {
+                margin-right: 8px;
+            }
+        }
+        p {
+            padding: 30px 60px 30px 0px;
+            font-size: 1.15rem;
+            line-height: 1.5rem;
+        }
+        .btn {
+            background-color: #c0392b;
+            width: 250px;
+            border: 0;
+            color: $font_color;
+            font-size: 20px;
+            text-transform: uppercase;
+            padding: 10px;
+        }
+    }
+}
