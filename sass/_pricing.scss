@@ -1,0 +1,17 @@
+.pricing_section {
+    background-color: $body-background-color;
+    .pricing-elements {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2vw;
+        padding: 40px 40px 40px 40px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .pricing-element {
+        padding: 50px;
+        background-color: $pricing;
+    }
+}
+
