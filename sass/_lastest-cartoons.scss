@@ -1,19 +1,14 @@
 .latest_cartoons_main_section {
     background-color: $body-background-color;
-    main_container{
+    main_container {
         padding: 40px 40px 40px 40px;
     }
     .latest_cartoons_container {
         .movie_card {
             position: relative;
             overflow: hidden;
-            .img_card {
-                // position: absolute;
-                background-image: url(../assets/moviesImg/supergirl.jpg);
-                height: 600px;
-                background-size: cover;
-                background-repeat: no-repeat;
-                align-items: center;
+            img {
+                width: 100%;
             }
             .info_movie {
                 position: absolute;
@@ -36,11 +31,11 @@
                 }
             }
         }
-        .movie_card:hover {
+        img:hover {
             transform: scale(1.2);
         }
     }
-    h1{
+    h1 {
         padding: 20px 20px 20px 20px;
         margin-left: 40px;
         border-left: 4px solid $icon-color;
@@ -54,7 +49,6 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2vw;
     padding: 40px 40px 40px 40px;
-    
 }
 @media only screen and (max-width: 1400px) {
     .latest_cartoons_container {
@@ -67,15 +61,13 @@
 @media only screen and (max-width: 1055px) {
     .latest_cartoons_container {
         grid-template-columns: repeat(1, 1fr);
-      .movie_card{
-        justify-content: center;
-        display: flex;
-        text-align: center;
-      }
+        .movie_card {
+            justify-content: center;
+            display: flex;
+            text-align: center;
+        }
         .img_card {
             width: 50%;
-
-
         }
     }
 }

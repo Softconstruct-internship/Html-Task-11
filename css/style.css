@@ -78,12 +78,8 @@
   .movies_main_section .movies_container .movie_card {
     position: relative;
     overflow: hidden; }
-    .movies_main_section .movies_container .movie_card .img_card {
-      background-image: url(../assets/moviesImg/supergirl.jpg);
-      height: 600px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      align-items: center; }
+    .movies_main_section .movies_container .movie_card img {
+      width: 100%; }
     .movies_main_section .movies_container .movie_card .info_movie {
       position: absolute;
       bottom: 0;
@@ -100,7 +96,7 @@
         align-items: center;
         font-size: 0.8rem;
         font-weight: 600; }
-  .movies_main_section .movies_container .movie_card:hover {
+  .movies_main_section .movies_container img:hover {
     transform: scale(1.2); }
 
 .movies_container {
@@ -132,12 +128,8 @@
   .latest_movies_main_section .latest_movies_container .movie_card {
     position: relative;
     overflow: hidden; }
-    .latest_movies_main_section .latest_movies_container .movie_card .img_card {
-      background-image: url(../assets/moviesImg/supergirl.jpg);
-      height: 600px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      align-items: center; }
+    .latest_movies_main_section .latest_movies_container .movie_card img {
+      width: 100%; }
     .latest_movies_main_section .latest_movies_container .movie_card .info_movie {
       position: absolute;
       bottom: 0;
@@ -154,7 +146,7 @@
         align-items: center;
         font-size: 0.8rem;
         font-weight: 600; }
-  .latest_movies_main_section .latest_movies_container .movie_card:hover {
+  .latest_movies_main_section .latest_movies_container img:hover {
     transform: scale(1.2); }
   .latest_movies_main_section h1 {
     padding: 20px 20px 20px 20px;
@@ -193,12 +185,8 @@
   .latest_series_main_section .latest_series_container .movie_card {
     position: relative;
     overflow: hidden; }
-    .latest_series_main_section .latest_series_container .movie_card .img_card {
-      background-image: url(../assets/moviesImg/supergirl.jpg);
-      height: 600px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      align-items: center; }
+    .latest_series_main_section .latest_series_container .movie_card img {
+      width: 100%; }
     .latest_series_main_section .latest_series_container .movie_card .info_movie {
       position: absolute;
       bottom: 0;
@@ -215,7 +203,7 @@
         align-items: center;
         font-size: 0.8rem;
         font-weight: 600; }
-  .latest_series_main_section .latest_series_container .movie_card:hover {
+  .latest_series_main_section .latest_series_container img:hover {
     transform: scale(1.2); }
   .latest_series_main_section h1 {
     padding: 20px 20px 20px 20px;
@@ -254,12 +242,8 @@
   .latest_cartoons_main_section .latest_cartoons_container .movie_card {
     position: relative;
     overflow: hidden; }
-    .latest_cartoons_main_section .latest_cartoons_container .movie_card .img_card {
-      background-image: url(../assets/moviesImg/supergirl.jpg);
-      height: 600px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      align-items: center; }
+    .latest_cartoons_main_section .latest_cartoons_container .movie_card img {
+      width: 100%; }
     .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie {
       position: absolute;
       bottom: 0;
@@ -276,7 +260,7 @@
         align-items: center;
         font-size: 0.8rem;
         font-weight: 600; }
-  .latest_cartoons_main_section .latest_cartoons_container .movie_card:hover {
+  .latest_cartoons_main_section .latest_cartoons_container img:hover {
     transform: scale(1.2); }
   .latest_cartoons_main_section h1 {
     padding: 20px 20px 20px 20px;

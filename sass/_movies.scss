@@ -4,13 +4,8 @@
         .movie_card {
             position: relative;
             overflow: hidden;
-            .img_card {
-                // position: absolute;
-                background-image: url(../assets/moviesImg/supergirl.jpg);
-                height: 600px;
-                background-size: cover;
-                background-repeat: no-repeat;
-                align-items: center;
+            img{
+                width: 100%;
             }
             .info_movie {
                 position: absolute;
@@ -33,7 +28,7 @@
                 }
             }
         }
-        .movie_card:hover {
+        img:hover {
             transform: scale(1.2);
         }
     }
@@ -62,8 +57,6 @@
       }
         .img_card {
             width: 50%;
-
-
         }
     }
 }
