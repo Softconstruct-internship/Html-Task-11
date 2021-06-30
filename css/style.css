@@ -366,14 +366,14 @@
   background-color: #181616; }
   .pricing_section .pricing-element.premium {
     border-top: 4px solid #c0392b; }
-  .pricing_section .a {
+  .pricing_section .flix_container {
     padding-top: 60px;
     text-align: center;
     font-size: 2rem;
     font-weight: 700; }
-    .pricing_section .a a {
+    .pricing_section .flix_container a {
       text-decoration: none; }
-    .pricing_section .a span {
+    .pricing_section .flix_container span {
       color: #c0392b; }
   .pricing_section .pricing-element {
     padding: 50px;
@@ -428,6 +428,59 @@
     grid-template-columns: 1fr; }
     .pricing-elements .pricing-element {
       margin-top: 30px; } }
+
+.footer {
+  background-color: #181616; }
+  .footer .first {
+    width: 400px; }
+    .footer .first p {
+      font-size: 16px;
+      line-height: 1.7rem; }
+    .footer .first .flix_container {
+      font-size: 2rem;
+      font-weight: 700; }
+      .footer .first .flix_container a {
+        text-decoration: none; }
+      .footer .first .flix_container span {
+        color: #c0392b; }
+  .footer .footer_nav p {
+    padding-top: 10px;
+    cursor: pointer; }
+  .footer .footer_nav p:hover {
+    transform: translateX(20px);
+    color: #c0392b; }
+  .footer .download_container h3 {
+    padding-bottom: 15px; }
+  .footer .download_container img:hover {
+    transform: translateX(20px); }
+
+.footer-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  padding: 40px 40px 40px 40px; }
+
+@media (max-width: 1100px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; }
+    .footer-container div {
+      text-align: center; }
+    .footer-container img {
+      padding-left: 30px; } }
+
+@media (max-width: 800px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    justify-content: center; }
+    .footer-container div {
+      text-align: center;
+      padding-top: 30px; }
+    .footer-container .first {
+      width: 100%; }
+    .footer-container img {
+      padding-left: 30px; } }
 
 * {
   padding: 0;
