@@ -65,13 +65,28 @@
       font-size: 1.15rem;
       line-height: 1.5rem; }
     .main_section_background .contsiner_div .btn {
-      background-color: #c0392b;
-      width: 250px;
-      border: 0;
-      color: #ffffff;
+      margin-top: 40px;
+      display: inline-flex;
+      position: relative;
+      padding: 5px 20px;
       font-size: 20px;
-      text-transform: uppercase;
-      padding: 10px; }
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background-color: #221f1f; }
+      .main_section_background .contsiner_div .btn span {
+        z-index: 1; }
+      .main_section_background .contsiner_div .btn::before {
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #c0392b;
+        transition: width 0.3s ease 0s; }
+      .main_section_background .contsiner_div .btn:hover::before {
+        width: 100%; }
 
 .movies_main_section {
   background-color: #181616; }
@@ -324,27 +339,95 @@
       font-size: 1.15rem;
       line-height: 1.5rem; }
     .main_section_poster .contsiner_div .btn {
-      background-color: #c0392b;
-      width: 250px;
-      border: 0;
-      color: #ffffff;
+      margin-top: 40px;
+      display: inline-flex;
+      position: relative;
+      padding: 5px 20px;
       font-size: 20px;
-      text-transform: uppercase;
-      padding: 10px; }
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background-color: #221f1f; }
+      .main_section_poster .contsiner_div .btn span {
+        z-index: 1; }
+      .main_section_poster .contsiner_div .btn::before {
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #c0392b;
+        transition: width 0.3s ease 0s; }
+      .main_section_poster .contsiner_div .btn:hover::before {
+        width: 100%; }
 
 .pricing_section {
   background-color: #181616; }
-  .pricing_section .pricing-elements {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2vw;
-    padding: 40px 40px 40px 40px;
-    display: flex;
-    justify-content: space-around; }
+  .pricing_section .pricing-element.premium {
+    border-top: 4px solid #c0392b; }
+  .pricing_section .a {
+    padding-top: 60px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700; }
+    .pricing_section .a a {
+      text-decoration: none; }
+    .pricing_section .a span {
+      color: #c0392b; }
   .pricing_section .pricing-element {
     padding: 50px;
-    background-color: #221f1f; }
+    background-color: #221f1f;
+    text-align: center; }
+    .pricing_section .pricing-element .title_container {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1.5rem; }
+    .pricing_section .pricing-element .pricing_context {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 1.25rem; }
+      .pricing_section .pricing-element .pricing_context p {
+        padding-bottom: 20px; }
+    .pricing_section .pricing-element .btn {
+      margin-top: 40px;
+      display: inline-flex;
+      position: relative;
+      padding: 5px 20px;
+      font-size: 20px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background-color: #221f1f; }
+      .pricing_section .pricing-element .btn span {
+        z-index: 1; }
+      .pricing_section .pricing-element .btn::before {
+        content: "";
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #c0392b;
+        transition: width 0.3s ease 0s; }
+      .pricing_section .pricing-element .btn:hover::before {
+        width: 100%; }
+  .pricing_section .pricing-element:hover {
+    transform: translateY(-20px); }
+
+.pricing-elements {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 40px 40px 40px 40px; }
+
+@media (max-width: 1100px) {
+  .pricing-elements {
+    grid-template-columns: 1fr; }
+    .pricing-elements .pricing-element {
+      margin-top: 30px; } }
 
 * {
   padding: 0;

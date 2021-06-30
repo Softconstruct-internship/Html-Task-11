@@ -1,16 +1,13 @@
 .main_header {
     background-color: $body-background-color;
     width: 100%;
-    // height: 500px;
     padding: 10px 0;
-
     .header_container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0px 20px 0px 20px;
     }
-
     .logo_container {
         a {
             color: $font_color;
@@ -19,21 +16,18 @@
             font-weight: 900;
         }
         span {
-            color: #c0392b;
+            color: $icon-color;
         }
     }
-
     .navbar {
         display: flex;
         align-items: center;
-
         a {
             text-decoration: none;
             color: $font_color;
             text-transform: uppercase;
             font-weight: 700;
         }
-
         div {
             padding-right: 20px;
         }
@@ -42,8 +36,8 @@
                 padding: 5px;
                 border-radius: 20px;
                 outline: none;
-                border: 1px solid #c0392b;
-                color: #c0392b;
+                border: 1px solid $icon-color;
+                color: $icon-color;
             }
         }
     }

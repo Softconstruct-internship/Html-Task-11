@@ -5,7 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
+
     .contsiner_div {
         transition: 0.5s ease-in-out;
         color: $font_color;
@@ -34,13 +34,33 @@
             line-height: 1.5rem;
         }
         .btn {
-            background-color: #c0392b;
-            width: 250px;
-            border: 0;
-            color: $font_color;
+            margin-top: 40px;
+            display: inline-flex;
+            position: relative;
+            padding: 5px 20px;
             font-size: 20px;
-            text-transform: uppercase;
-            padding: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            background-color: $pricing;
+            span {
+                z-index: 1;
+            }
+            &::before {
+                content: "";
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $icon-color;
+                transition: width 0.3s ease 0s;
+            }
+            &:hover {
+                &::before {
+                    width: 100%;
+                }
+            }
         }
     }
 }
