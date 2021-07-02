@@ -9,7 +9,6 @@
     filter: brightness(0.5);
 
     .contsiner_div {
-        // position: absolute;
         transition: 0.5s ease-in-out;
         color: $font_color;
         width: 40%;
@@ -63,6 +62,25 @@
                 &::before {
                     width: 100%;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .main_section_poster {
+        height: auto;
+        .contsiner_div {
+            width: 60%;
+            h1 {
+                font-size: 3rem;
+                line-height: 5rem;
+                font-weight: 900;
+            }
+            p {
+                width: 100%;
+                font-size: 1rem;
+                line-height: 1.5rem;
             }
         }
     }

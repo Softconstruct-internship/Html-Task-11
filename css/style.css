@@ -42,29 +42,29 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
-  .main_section_background .contsiner_div {
+  .main_section_background .container_text {
     transition: 0.5s ease-in-out;
     color: #ffffff;
     width: 40%;
     padding: 60px 40px 0px 40px; }
-    .main_section_background .contsiner_div h1 {
+    .main_section_background .container_text h1 {
       font-size: 4rem;
       line-height: 5rem;
       font-weight: 900; }
-    .main_section_background .contsiner_div .movie-descriptions {
+    .main_section_background .container_text .movie-descriptions {
       font-size: 0.8rem;
       align-items: center;
       padding-top: 30px; }
-      .main_section_background .contsiner_div .movie-descriptions i {
+      .main_section_background .container_text .movie-descriptions i {
         margin-right: 3px;
         color: red; }
-      .main_section_background .contsiner_div .movie-descriptions span {
+      .main_section_background .container_text .movie-descriptions span {
         margin-right: 8px; }
-    .main_section_background .contsiner_div p {
+    .main_section_background .container_text p {
       padding: 30px 60px 30px 0px;
       font-size: 1.15rem;
       line-height: 1.5rem; }
-    .main_section_background .contsiner_div .btn {
+    .main_section_background .container_text .btn {
       margin-top: 40px;
       display: inline-flex;
       position: relative;
@@ -74,9 +74,9 @@
       cursor: pointer;
       border: none;
       background-color: #221f1f; }
-      .main_section_background .contsiner_div .btn span {
+      .main_section_background .container_text .btn span {
         z-index: 1; }
-      .main_section_background .contsiner_div .btn::before {
+      .main_section_background .container_text .btn::before {
         content: "";
         width: 50%;
         height: 100%;
@@ -85,8 +85,20 @@
         left: 0;
         background-color: #c0392b;
         transition: width 0.3s ease 0s; }
-      .main_section_background .contsiner_div .btn:hover::before {
+      .main_section_background .container_text .btn:hover::before {
         width: 100%; }
+
+@media (max-width: 1100px) {
+  .main_section_background .container_text {
+    width: 60%; }
+    .main_section_background .container_text h1 {
+      font-size: 3rem;
+      line-height: 5rem;
+      font-weight: 900; }
+    .main_section_background .container_text p {
+      width: 100%;
+      font-size: 1rem;
+      line-height: 1.5rem; } }
 
 .movies_main_section {
   background-color: #181616; }
@@ -267,8 +279,7 @@
       color: #ffffff;
       background-color: rgba(0, 0, 0, 0.8); }
       .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie i {
-        margin-right: 3px;
-        color: red; }
+        margin-right: 3px; }
       .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie h2 {
         padding-bottom: 20px; }
       .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie span {
@@ -361,6 +372,20 @@
         transition: width 0.3s ease 0s; }
       .main_section_poster .contsiner_div .btn:hover::before {
         width: 100%; }
+
+@media (max-width: 1100px) {
+  .main_section_poster {
+    height: auto; }
+    .main_section_poster .contsiner_div {
+      width: 60%; }
+      .main_section_poster .contsiner_div h1 {
+        font-size: 3rem;
+        line-height: 5rem;
+        font-weight: 900; }
+      .main_section_poster .contsiner_div p {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.5rem; } }
 
 .pricing_section {
   background-color: #181616; }

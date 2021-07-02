@@ -1,22 +1,22 @@
 .pricing_section {
     background-color: $body-background-color;
-    .pricing-element.premium{
+    .pricing-element.premium {
         border-top: 4px solid $icon-color;
     }
-    .flix_container{
+    .flix_container {
         padding-top: 60px;
         text-align: center;
         font-size: 2rem;
         font-weight: 700;
-        a{
+        a {
             text-decoration: none;
         }
-    
-        span{
-            color:$icon-color ;
+
+        span {
+            color: $icon-color;
         }
     }
-    .pricing-element{
+    .pricing-element {
         padding: 50px;
         background-color: $pricing;
         text-align: center;
