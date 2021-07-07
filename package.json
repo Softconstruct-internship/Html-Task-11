@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "json:server": "json-server --watch db.json",
     "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Eduard",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^6.0.0"
+  },
+  "dependencies": {
+    "json-server": "^0.16.3"
   }
 }
