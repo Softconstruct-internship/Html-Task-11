@@ -1,11 +1,6 @@
 import DbServer from "./db_server.js";
 const URL = "http://localhost:3000/movies";
 
-let moviesMainSection = document.querySelector(".movies_main_section");
-let moviesContainer = document.querySelector(".movies_container");
-let latestMoviesMainSection = document.querySelector(".latest_movies_main_section");
-let mainContainer = document.querySelector(".main_container");
-let latestMoviesContainer = document.querySelector(".latest_movies_container");
 function ratings(arr) {
     let sum = 0
     for (let i = 0; i < arr.length; i++) {
@@ -17,7 +12,8 @@ function ratings(arr) {
 function getDuration(str) {
     return str.slice(2, -1);
 }
-function createHtml(element) {
+
+function createHtml(element, sectionName) {
     const movieCard = document.createElement("div");
     movieCard.className = "movie_card";
 
@@ -33,7 +29,7 @@ function createHtml(element) {
     const infoMovie = document.createElement("div")
     infoMovie.className = "info_movie"
 
-    const filmTitle = document.createElement("h1")
+    const filmTitle = document.createElement("h2")
     filmTitle.className = "film_title"
     filmTitle.textContent = element.title
 
@@ -71,40 +67,31 @@ function createHtml(element) {
 
     infoMovie.prepend(filmTitle);
     movieCard.append(infoMovie);
-    // console.log(movieCard)
-    // return movieCard
-    // moviesContainer.append(movieCard)
-    // moviesMainSection.append(moviesContainer)
-
-    latestMoviesContainer.append(movieCard)
-    mainContainer.append(latestMoviesContainer)
-    latestMoviesMainSection.append(mainContainer)
-   
+    document.querySelector(sectionName).append(movieCard)
 
 }
 
 const moviesDb = new DbServer();
-moviesDb.getMovies(URL + "?_page=1&_limit=4").then(moviesList => {
-    moviesList.forEach((element) => {
-        createHtml(element)
-    })
-})
+moviesDb.getMovies(URL + "?_page=1&_limit=4").then(resp => {
+    resp.forEach((element) => {
+        createHtml(element, '.movies_container');
+    });
+});
 
+moviesDb.getMovies(URL + "?_page=1&_limit=4&year_gte=2017").then(resp => {
+    resp.forEach((element) => {
+        createHtml(element, '.latest_movies_container');
+    });
+});
 
-moviesDb.getMovies(URL + "?_page=1&_limit=7").then(lastMovies => {
-    let filterMovies = lastMovies.filter((element) => {
-        return element.year > 2017
-    })
-    filterMovies.forEach((element) => {
-        console.log(element)
-        createHtml(element)
-    })
+moviesDb.getMovies(URL + "?_page=1&_limit=4&genres_like=Drama").then(resp => {
+    resp.forEach((element) => {
+        createHtml(element, '.latest_series_container');
+    });
+});
 
-})
-
-// const a = ({movieCard}) => {
-//     moviesContainer.append(movieCard)
-//     moviesMainSection.append(moviesContainer)
-//     console.log(moviesMainSection)
-// }
-// a()
+moviesDb.getMovies(URL + "?_page=1&_limit=8&genres_like=Animation").then(resp => {
+    resp.forEach((cartoon) => {
+        createHtml(cartoon, '.latest_cartoons_container');
+    });
+});
