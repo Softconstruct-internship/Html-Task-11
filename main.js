@@ -6,7 +6,7 @@ function ratings(arr) {
     for (let i = 0; i < arr.length; i++) {
         sum += arr[i]
     }
-    return (sum / arr.length).toFixed()
+    return (sum / arr.length).toFixed();
 }
 
 function getDuration(str) {
@@ -22,19 +22,19 @@ function createHtml(element, sectionName) {
 
     const image = document.createElement("img");
     image.className = "img";
-    image.src = element.posterurl
-    imgCard.append(image)
-    movieCard.append(imgCard)
+    image.src = element.posterurl;
+    imgCard.append(image);
+    movieCard.append(imgCard);
 
-    const infoMovie = document.createElement("div")
-    infoMovie.className = "info_movie"
+    const infoMovie = document.createElement("div");
+    infoMovie.className = "info_movie";
 
-    const filmTitle = document.createElement("h2")
-    filmTitle.className = "film_title"
-    filmTitle.textContent = element.title
+    const filmTitle = document.createElement("h2");
+    filmTitle.className = "film_title";
+    filmTitle.textContent = element.title;
 
     const movieDescriptions = document.createElement("div");
-    movieDescriptions.className = "movie-descriptions"
+    movieDescriptions.className = "movie-descriptions";
 
     const movieRating = document.createElement("span");
     movieRating.className = "movie-rating";
@@ -42,32 +42,32 @@ function createHtml(element, sectionName) {
 
     const iRating = document.createElement("i");
     iRating.className = "fa fa-star";
-    movieRating.prepend(iRating)
+    movieRating.prepend(iRating);
 
     const movieTime = document.createElement("span");
     movieTime.className = "movie-time";
-    movieTime.textContent = getDuration(element.duration)
+    movieTime.textContent = getDuration(element.duration);
 
     const iTime = document.createElement("i");
     iTime.className = "fa fa-clock-o";
-    movieTime.prepend(iTime)
+    movieTime.prepend(iTime);
     const movieQualit = document.createElement("span");
     movieQualit.className = "movie-qualit";
-    movieQualit.textContent = "HD"
+    movieQualit.textContent = "HD";
 
     const movieAge = document.createElement("span");
     movieAge.className = "movie-age";
-    movieQualit.textContent = "16+"
+    movieQualit.textContent = "16+";
 
-    movieDescriptions.append(movieRating)
-    movieDescriptions.append(movieTime)
-    movieDescriptions.append(movieQualit)
-    movieDescriptions.append(movieAge)
+    movieDescriptions.append(movieRating);
+    movieDescriptions.append(movieTime);
+    movieDescriptions.append(movieQualit);
+    movieDescriptions.append(movieAge);
     infoMovie.append(movieDescriptions);
 
     infoMovie.prepend(filmTitle);
     movieCard.append(infoMovie);
-    document.querySelector(sectionName).append(movieCard)
+    document.querySelector(sectionName).append(movieCard);
 
 }
 
@@ -90,8 +90,42 @@ moviesDb.getMovies(URL + "?_page=1&_limit=4&genres_like=Drama").then(resp => {
     });
 });
 
-moviesDb.getMovies(URL + "?_page=1&_limit=8&genres_like=Animation").then(resp => {
+moviesDb.getMovies(URL + "?_page=1&genres_like=Animation").then(resp => {
+    resp = resp.slice(0, 4);
     resp.forEach((cartoon) => {
         createHtml(cartoon, '.latest_cartoons_container');
     });
 });
+
+
+let listener = (pageId) => {
+    document.querySelector('.latest_cartoons_container').innerHTML = '';
+    moviesDb.getMovies(URL + `?_page=1&genres_like=Animation`).then(resp => {
+        resp = resp.slice((pageId - 1) * 4, pageId * 4);
+        resp.forEach((cartoon) => {
+            createHtml(cartoon, '.latest_cartoons_container');
+        });
+    });
+};
+
+let getAllItemsCount = () => {
+    return moviesDb.getMovies(URL + "?genres_like=Animation").then(resp => {
+        return resp.length;
+    });
+};
+
+let drawPaging = async () => {
+    let count = await getAllItemsCount();
+    let totalPages = count / 4;
+    let pagingContainer = document.getElementById('paging_container');
+    for (let i = 1; i <= totalPages; i++) {
+        let pagingItem = document.createElement("span");
+        pagingItem.textContent = i;
+        pagingItem.addEventListener("click", () => {
+            listener(i);
+        });
+        pagingContainer.append(pagingItem);
+    };
+};
+
+drawPaging();

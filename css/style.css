@@ -174,7 +174,8 @@
       .latest_movies_main_section .latest_movies_container .movie_card .info_movie span {
         align-items: center;
         font-size: 0.8rem;
-        font-weight: 600; }
+        font-weight: 600;
+        margin: 0 8px; }
   .latest_movies_main_section .latest_movies_container img:hover {
     transform: scale(1.2); }
   .latest_movies_main_section h1 {
@@ -231,7 +232,8 @@
       .latest_series_main_section .latest_series_container .movie_card .info_movie span {
         align-items: center;
         font-size: 0.8rem;
-        font-weight: 600; }
+        font-weight: 600;
+        margin: 0 8px; }
   .latest_series_main_section .latest_series_container img:hover {
     transform: scale(1.2); }
   .latest_series_main_section h1 {
@@ -268,28 +270,32 @@
   background-color: #181616; }
   .latest_cartoons_main_section .main_container_cartoons {
     padding: 40px 40px 40px 40px; }
-  .latest_cartoons_main_section .latest_cartoons_container .movie_card {
-    position: relative;
-    overflow: hidden; }
-    .latest_cartoons_main_section .latest_cartoons_container .movie_card img {
-      width: 100%; }
-    .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      color: #ffffff;
-      background-color: rgba(0, 0, 0, 0.8); }
-      .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie i {
-        margin-right: 3px; }
-      .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie h2 {
-        padding-bottom: 20px; }
-      .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie span {
-        align-items: center;
-        font-size: 0.8rem;
-        font-weight: 600; }
-  .latest_cartoons_main_section .latest_cartoons_container img:hover {
-    transform: scale(1.2); }
+  .latest_cartoons_main_section .latest_cartoons_container {
+    height: 447px; }
+    .latest_cartoons_main_section .latest_cartoons_container .movie_card {
+      position: relative;
+      overflow: hidden; }
+      .latest_cartoons_main_section .latest_cartoons_container .movie_card img {
+        width: 100%; }
+      .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.8); }
+        .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie i {
+          margin-right: 3px;
+          color: red; }
+        .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie h2 {
+          padding-bottom: 20px; }
+        .latest_cartoons_main_section .latest_cartoons_container .movie_card .info_movie span {
+          align-items: center;
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin: 0 8px; }
+    .latest_cartoons_main_section .latest_cartoons_container img:hover {
+      transform: scale(1.2); }
   .latest_cartoons_main_section h1 {
     padding: 20px 20px 20px 20px;
     margin-left: 40px;
@@ -299,7 +305,7 @@
 
 .latest_cartoons_container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2vw;
   padding: 40px 40px 40px 40px; }
@@ -455,6 +461,17 @@
     grid-template-columns: 1fr; }
     .pricing-elements .pricing-element {
       margin-top: 30px; } }
+
+.pagination_container {
+  background-color: #181616; }
+  .pagination_container #paging_container {
+    display: flex;
+    justify-content: center;
+    padding: 20px; }
+    .pagination_container #paging_container span {
+      padding: 5px 10px;
+      cursor: pointer;
+      border: 1px solid #ddd; }
 
 .footer {
   background-color: #181616; }

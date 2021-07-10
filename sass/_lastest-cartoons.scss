@@ -4,6 +4,7 @@
         padding: 40px 40px 40px 40px;
     }
     .latest_cartoons_container {
+        height: 447px;
         .movie_card {
             position: relative;
             overflow: hidden;
@@ -19,7 +20,7 @@
                 background-color: rgba(0, 0, 0, 0.8);
                 i {
                     margin-right: 3px;
-                    // color: red;
+                    color: red;
                 }
                 h2 {
                     padding-bottom: 20px;
@@ -28,6 +29,7 @@
                     align-items: center;
                     font-size: 0.8rem;
                     font-weight: 600;
+                    margin: 0 8px;
                 }
             }
         }
@@ -45,7 +47,7 @@
 }
 .latest_cartoons_container {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2vw;
     padding: 40px 40px 40px 40px;

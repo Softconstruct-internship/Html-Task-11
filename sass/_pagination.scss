@@ -1,0 +1,13 @@
+.pagination_container {
+    background-color: $body-background-color;
+    #paging_container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        span {
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+    }
+}
