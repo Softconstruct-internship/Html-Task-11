@@ -1,0 +1,17 @@
+.search_container_results {
+    background-color: $body-background-color;
+    display: none;
+    padding: 40px;
+    .movie_card {
+        justify-content: center;
+        text-align: center;
+        .info_movie {
+            .film_title {
+                padding: 20px;
+            }
+            .story_line {
+                padding: 20px;
+            }
+        }
+    }
+}

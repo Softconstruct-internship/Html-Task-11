@@ -473,6 +473,18 @@
       cursor: pointer;
       border: 1px solid #ddd; }
 
+.search_container_results {
+  background-color: #181616;
+  display: none;
+  padding: 40px; }
+  .search_container_results .movie_card {
+    justify-content: center;
+    text-align: center; }
+    .search_container_results .movie_card .info_movie .film_title {
+      padding: 20px; }
+    .search_container_results .movie_card .info_movie .story_line {
+      padding: 20px; }
+
 .footer {
   background-color: #181616; }
   .footer .first {

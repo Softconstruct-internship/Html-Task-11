@@ -1,75 +1,7 @@
 import DbServer from "./db_server.js";
+import createHtml from "./helpers/createHtml.js";
+
 const URL = "http://localhost:3000/movies";
-
-function ratings(arr) {
-    let sum = 0
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i]
-    }
-    return (sum / arr.length).toFixed();
-}
-
-function getDuration(str) {
-    return str.slice(2, -1);
-}
-
-function createHtml(element, sectionName) {
-    const movieCard = document.createElement("div");
-    movieCard.className = "movie_card";
-
-    const imgCard = document.createElement("div");
-    imgCard.className = "img_card";
-
-    const image = document.createElement("img");
-    image.className = "img";
-    image.src = element.posterurl;
-    imgCard.append(image);
-    movieCard.append(imgCard);
-
-    const infoMovie = document.createElement("div");
-    infoMovie.className = "info_movie";
-
-    const filmTitle = document.createElement("h2");
-    filmTitle.className = "film_title";
-    filmTitle.textContent = element.title;
-
-    const movieDescriptions = document.createElement("div");
-    movieDescriptions.className = "movie-descriptions";
-
-    const movieRating = document.createElement("span");
-    movieRating.className = "movie-rating";
-    movieRating.textContent = ratings(element.ratings);
-
-    const iRating = document.createElement("i");
-    iRating.className = "fa fa-star";
-    movieRating.prepend(iRating);
-
-    const movieTime = document.createElement("span");
-    movieTime.className = "movie-time";
-    movieTime.textContent = getDuration(element.duration);
-
-    const iTime = document.createElement("i");
-    iTime.className = "fa fa-clock-o";
-    movieTime.prepend(iTime);
-    const movieQualit = document.createElement("span");
-    movieQualit.className = "movie-qualit";
-    movieQualit.textContent = "HD";
-
-    const movieAge = document.createElement("span");
-    movieAge.className = "movie-age";
-    movieQualit.textContent = "16+";
-
-    movieDescriptions.append(movieRating);
-    movieDescriptions.append(movieTime);
-    movieDescriptions.append(movieQualit);
-    movieDescriptions.append(movieAge);
-    infoMovie.append(movieDescriptions);
-
-    infoMovie.prepend(filmTitle);
-    movieCard.append(infoMovie);
-    document.querySelector(sectionName).append(movieCard);
-
-}
 
 const moviesDb = new DbServer();
 moviesDb.getMovies(URL + "?_page=1&_limit=4").then(resp => {
@@ -129,3 +61,64 @@ let drawPaging = async () => {
 };
 
 drawPaging();
+
+let searchBar = document.querySelector("#searchBar")
+let sectionBody = document.querySelector(".section_body")
+let searchContainerResults = document.querySelector(".search_container_results")
+
+searchBar.addEventListener('keyup', (e) => {
+    let value = e.target.value
+    fetch(`http://localhost:3000/movies/?title_like=${value}`)
+        .then(resp => {
+            return resp.json();
+        })
+        .then(data => {
+            searchContainerResults.style.display = "block";
+            sectionBody.style.display = "none";
+            data.forEach((element) => {
+                const movieCard = document.createElement("div");
+                movieCard.className = "movie_card";
+
+                const imgCard = document.createElement("div");
+                imgCard.className = "img_card";
+
+                const image = document.createElement("img");
+                image.className = "img";
+                image.src = element.posterurl;
+                imgCard.append(image);
+                movieCard.append(imgCard);
+
+                const infoMovie = document.createElement("div");
+                infoMovie.className = "info_movie";
+
+                const filmTitle = document.createElement("h2");
+                filmTitle.className = "film_title";
+                filmTitle.textContent = element.title;
+
+                const filmActorsName = document.createElement("span");
+                filmActorsName.className = "film_actors_name";
+                filmActorsName.textContent = element.actors;
+
+                const filmActors = document.createElement("span");
+                filmActors.className = "film_actors";
+                filmActors.textContent = "Actors - ";
+
+                infoMovie.prepend(filmActorsName);
+                infoMovie.prepend(filmActors);
+
+                const storyLine = document.createElement("p");
+                storyLine.className = "story_line";
+                storyLine.textContent = element.storyline;
+
+                infoMovie.prepend(storyLine);
+
+                infoMovie.prepend(filmActorsName);
+                infoMovie.prepend(filmActors);
+
+                infoMovie.prepend(filmTitle);
+                movieCard.append(infoMovie);
+                searchContainerResults.append(movieCard);
+            });
+
+        });
+});
