@@ -63,6 +63,6 @@ export default function createHtml(element, sectionName) {
 
     infoMovie.prepend(filmTitle);
     movieCard.append(infoMovie);
-    document.querySelector(sectionName).append(movieCard);
 
+    document.querySelector(sectionName).append(movieCard);
 }
