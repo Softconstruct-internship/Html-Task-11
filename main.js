@@ -67,18 +67,23 @@ const searchBar = document.querySelector("#searchBar")
 const sectionBody = document.querySelector(".section_body")
 const searchContainerResults = document.querySelector(".search_container_results")
 
-searchBar.addEventListener('keyup', (e) => {
-    let value = e.target.value
-    fetch(`http://localhost:3000/movies/?title_like=${value}`)
-        .then(resp => {
-            return resp.json();
-        })
-        .then(data => {
-            searchContainerResults.style.display = "block";
-            sectionBody.style.display = "none";
-            data.forEach((element) => {
-                createHtmlSearch(element, ".search_container_results")
-            });
+searchBar.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        e.preventDefault();
+        let value = e.target.value
+        fetch(`http://localhost:3000/movies/?title_like=${value}`)
+            .then(resp => {
+                return resp.json();
+            })
+            .then(data => {
+                searchContainerResults.style.display = "block";
+                sectionBody.style.display = "none";
+                data.forEach((element) => {
+                    createHtmlSearch(element, ".search_container_results")
+                });
 
-        });
+            });
+    }
+    return new Error("Movie Not found Try again")
+
 });
