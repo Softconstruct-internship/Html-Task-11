@@ -79,11 +79,13 @@ searchBar.addEventListener('keypress', (e) => {
                 searchContainerResults.style.display = "block";
                 sectionBody.style.display = "none";
                 data.forEach((element) => {
-                    createHtmlSearch(element, ".search_container_results")
+                    createHtmlSearch(element, ".search_container_results");
+
                 });
-
-            });
-    }
-    return new Error("Movie Not found Try again")
-
+        }).then(() => {
+            e.target.value = ''
+        })
+    };
+    return new Error("Movie Not found Try again");
 });
+
